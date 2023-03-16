@@ -360,23 +360,23 @@ def update_drop_options(country):
         value1 = 'AMCM'
 
         options2 = [
-            {'label': 'ES 2022 Completo - Opción: AMCM, 25 CDS, GDL y MTY 20% UPMs',
-             'value': 'option 1.csv'},
-            {'label': 'ES 2022 Completo - Opción: AMCM, 25 CDS, GDL y MTY 25% UPMs',
-             'value': 'option 2.csv'},
-            {'label': 'ES 2022 Completo - Opción: AMCM, 25 CDS, GDL y MTY 50% UPMs',
-             'value': 'option 3.csv'}
+            {'label': 'Anual - Opción: AMCM y 25 CDS 20% UPMs / GDL y MTY COMPLETOS', 'value': 'option1_GDL_MTY_c.csv'},
+            {'label': 'Anual - Opción: AMCM y 25 CDS 25% UPMs / GDL y MTY COMPLETOS', 'value': 'option2_GDL_MTY_c.csv'},
+            {'label': 'Anual - Opción: AMCM y 25 CDS 50% UPMs / GDL y MTY COMPLETOS', 'value': 'option3_GDL_MTY_c.csv'},
+            {'label': 'Anual - Opción: AMCM, 25 CDS, GDL y MTY 20% UPMs', 'value': 'option 1.csv'},
+            {'label': 'Anual - Opción: AMCM, 25 CDS, GDL y MTY 25% UPMs', 'value': 'option 2.csv'},
+            {'label': 'Anual - Opción: AMCM, 25 CDS, GDL y MTY 50% UPMs', 'value': 'option 3.csv'}
         ]
         value2 = 'option 1.csv'
 
         options3 = [
-            {'label': 'ES 2022 Completo - Opción: AMCM, 25 CDS, GDL y MTY 20% UPMs',
-             'value': 'tasas_option 1.csv'},
-            {'label': 'ES 2022 Completo - Opción: AMCM, 25 CDS, GDL y MTY 25% UPMs',
-             'value': 'tasas_option 2.csv'},
-            {'label': 'ES 2022 Completo - Opción: AMCM, 25 CDS, GDL y MTY 50% UPMs',
-             'value': 'tasas_option 3.csv'}
-         ]
+            {'label': 'Anual - Opción: AMCM, 25 CDS, GDL y MTY 20% UPMs', 'value': 'tasas_option 1.csv'},
+            {'label': 'Anual - Opción: AMCM, 25 CDS, GDL y MTY 25% UPMs', 'value': 'tasas_option 2.csv'},
+            {'label': 'Anual - Opción: AMCM, 25 CDS, GDL y MTY 50% UPMs', 'value': 'tasas_option 3.csv'},
+            {'label': 'Anual - Opción: AMCM y 25 CDS 20% UPMs / GDL y MTY COMPLETOS','value': 'tasas_option1_cm1000_c.csv'},
+            {'label': 'Anual - Opción: AMCM y 25 CDS 25% UPMs / GDL y MTY COMPLETOS', 'value': 'tasas_option2_cm1000_c.csv'},
+            {'label': 'Anual - Opción: AMCM y 25 CDS 50% UPMs / GDL y MTY COMPLETOS', 'value': 'tasas_option3_cm1000_c.csv'},
+        ]
         value3 = 'tasas_option 1.csv'
 
     else:
