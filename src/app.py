@@ -4,7 +4,7 @@ Created on Thu Mar 06 16:10:27 2023
 
 @author: ADMIN
 """
-
+import pathlib
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
@@ -30,6 +30,8 @@ colors = {
     'paper_color': '#ff0000'
 }
 
+PATH = pathlib.Path(__file__).parent
+DATA_PATH = PATH.joinpath("data").resolve()
 
 app.layout = html.Div([
 
@@ -410,7 +412,7 @@ def update_drop_options(country):
 def update_slide1(dominio, base):
     # Base con los parámetros estimados
     nom_base_estimaciones0 = base
-    data_par = pd.read_csv(nom_base_estimaciones0)
+    data_par = pd.read_csv(DATA_PATH.joinpath(nom_base_estimaciones0))
     data_par['e'] = data_par['ic_sup'] - data_par['proporcion']
     min_muestra = data_par.Muestra.min() + 1
     max_muestra = data_par.Muestra.max()
@@ -446,7 +448,7 @@ def update_slide1(dominio, base):
 # Definicion de funcion: Para el callback del Slider
 def update_slide1(country, dominio, base):
     nom_base_tasas = base
-    data_tasa_resp = pd.read_csv(nom_base_tasas)
+    data_tasa_resp = pd.read_csv(DATA_PATH.joinpath(nom_base_tasas))
     min_muestra_tp = data_tasa_resp.muestra.min() + 1
     max_muestra_tp = data_tasa_resp.muestra.max()
 
@@ -484,7 +486,7 @@ def update_slide1(country, dominio, base):
 def update_fig(drop_value, slide_value, base):
     # Base con los parámetros estimados
     nom_base_estimaciones = base
-    data_par = pd.read_csv(nom_base_estimaciones)
+    data_par = pd.read_csv(DATA_PATH.joinpath(nom_base_estimaciones))
 
     data_par['e'] = data_par['ic_sup'] - data_par['proporcion']
     data_par0_filt = data_par[data_par.Muestra == 0].copy()
@@ -541,7 +543,7 @@ def update_fig(drop_value, slide_value, base):
 def update_fig2(drop_value, slide_value, base):
     #    # Base con los parámetros estimados
     nom_base_estimaciones = base
-    data_par = pd.read_csv(nom_base_estimaciones)
+    data_par = pd.read_csv(DATA_PATH.joinpath(nom_base_estimaciones))
     data_par['e'] = (data_par['ic_sup'] - data_par['proporcion']) / 1.96
 
     slide_value = np.arange(slide_value[0], slide_value[1] + 1, 1)
@@ -586,7 +588,7 @@ def update_fig2(drop_value, slide_value, base):
 def update_fig3(drop_value_c, slide_value_c, check_value_c, base):
     # Base con los parámetros estimados
     nom_base_estimaciones = base
-    data_par = pd.read_csv(nom_base_estimaciones)
+    data_par = pd.read_csv(DATA_PATH.joinpath(nom_base_estimaciones))
     data_par['SE'] = (data_par['ic_sup'] - data_par['proporcion']) / 1.96
 
     slide_value_c = np.arange(slide_value_c[0], slide_value_c[1] + 1, 1)
@@ -651,7 +653,7 @@ def update_fig3(drop_value_c, slide_value_c, check_value_c, base):
 def update_fig4(drop_value_d, slide_value_d, base):
     # Base tasa de respuesta
     nom_base_tasas = base
-    data_tasa_resp = pd.read_csv(nom_base_tasas)
+    data_tasa_resp = pd.read_csv(DATA_PATH.joinpath(nom_base_tasas))
 
     slide_value_d = np.arange(slide_value_d[0], slide_value_d[1] + 1, 1)
     data_tp_filt = data_tasa_resp[data_tasa_resp.muestra.isin(slide_value_d)].copy()
@@ -687,7 +689,7 @@ def update_fig4(drop_value_d, slide_value_d, base):
 def update_fig5(drop_value_d, slide_value_d, base):
     # Base tasa de respuesta
     nom_base_tasas = base
-    data_tasa_resp = pd.read_csv(nom_base_tasas)
+    data_tasa_resp = pd.read_csv(DATA_PATH.joinpath(nom_base_tasas))
     data_tasa_resp_0 = data_tasa_resp[data_tasa_resp.muestra == 0].copy()
 
     slide_value_d = np.arange(slide_value_d[0], slide_value_d[1] + 1, 1)
