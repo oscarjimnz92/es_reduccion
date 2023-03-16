@@ -729,4 +729,4 @@ def update_fig5(drop_value_d, slide_value_d, base):
 
 
 if __name__ == '__main__':
-    app.run_server(debug=False)
+    app.run_server(debug=True)
