@@ -498,7 +498,7 @@ def update_fig(drop_value, slide_value, base):
 
     data = []
 
-    graf_dom = go.Scatter(name='ES 2019',
+    graf_dom = go.Scatter(name='ES 2022',
                           x=data_par0_filt2.categoria,
                           y=data_par0_filt2.proporcion,
                           mode='markers',
