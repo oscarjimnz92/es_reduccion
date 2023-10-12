@@ -366,8 +366,8 @@ def update_drop_options(country):
             {'label': 'ES22 Anual - Opción: AMCM, 25 CDS, GDL y MTY 20% UPMs', 'value': 'option 1.csv'},
             {'label': 'ES22 Anual - Opción: AMCM, 25 CDS, GDL y MTY 25% UPMs', 'value': 'option 2.csv'},
             {'label': 'ES22 Anual - Opción: AMCM, 25 CDS, GDL y MTY 50% UPMs', 'value': 'option 3.csv'},
-            {'label': 'ES23 Primera Ola - Opción: AMCM y 25 CDS 20% UPMs / GDL y MTY COMPLETOS', 'value': 'option1_23_1_GDL_MTY_c.csv'},
-            {'label': 'ES23 Primera Ola - Opción: AMCM y 25 CDS 25% UPMs / GDL y MTY COMPLETOS', 'value': 'option2_23_1_GDL_MTY_c.csv'},
+            {'label': 'ES23 Primera Ola - Opción: AMCM y 25 CDS 20% UPMs / GDL y MTY COMPLETOS', 'value': 'option2_23_1_GDL_MTY_c.csv'},
+            {'label': 'ES23 Primera Ola - Opción: AMCM y 25 CDS 25% UPMs / GDL y MTY COMPLETOS', 'value': 'option1_23_1_GDL_MTY_c.csv'},
         ]
         value2 = 'option 1.csv'
 
