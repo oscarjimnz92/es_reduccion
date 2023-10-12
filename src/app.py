@@ -16,7 +16,7 @@ import dash_table
 import urllib.parse
 
 
-data_table_resum_col = ['Categoría', 'Parámetro', 'ES 2022', 'Promedio', 'Mínimo', 'Máximo']
+data_table_resum_col = ['Categoría', 'Parámetro', 'ES 202X', 'Promedio', 'Mínimo', 'Máximo']
 data_table_tp_col = ['Muestra', 'Promedio', 'SD', 'Mínimo', 'Máximo']
 
 # Inicia la app
@@ -245,7 +245,7 @@ app.layout = html.Div([
 
                         html.Br(),
                         html.Div(children='Cálculo de la tasa de respuesta de las muestras obtenidas'
-                                          ' con el ES 2022',
+                                          ' con el ES 202X',
                                  style={
                                      'textAlign': 'center',
                                      'color': colors['text']
@@ -503,7 +503,7 @@ def update_fig(drop_value, slide_value, base):
 
     data = []
 
-    graf_dom = go.Scatter(name='ES 2022',
+    graf_dom = go.Scatter(name='ES 202X',
                           x=data_par0_filt2.categoria,
                           y=data_par0_filt2.proporcion,
                           mode='markers',
@@ -622,7 +622,7 @@ def update_fig3(drop_value_c, slide_value_c, check_value_c, base):
                                           value_vars=['proporcion', 'cv', 'sd', 'deff', 'n', 'tm', 'SE'])
     data_table_melt_0['value'] = data_table_melt_0.value.round(4)
     data_table_resum = pd.merge(data_table_resum, data_table_melt_0, on=['categoria', 'variable'])
-    data_table_resum = data_table_resum.rename(columns={'value': 'ES 2022'})
+    data_table_resum = data_table_resum.rename(columns={'value': 'ES 202X'})
 
     data_table_resum = data_table_resum[data_table_resum.variable.isin(check_value_c)]
     data_table_resum = data_table_resum.rename(
@@ -638,7 +638,7 @@ def update_fig3(drop_value_c, slide_value_c, check_value_c, base):
 
     data_table_update = data_table_resum.to_dict("rows")
 
-    colum_tabla_csv = ['DOMINIO', 'Categoría', 'Parámetro', 'ES 2022', 'Promedio', 'Mínimo', 'Máximo', ]
+    colum_tabla_csv = ['DOMINIO', 'Categoría', 'Parámetro', 'ES 202X', 'Promedio', 'Mínimo', 'Máximo', ]
 
     csv_string = data_table_resum[colum_tabla_csv].to_csv(index=False, encoding='utf-8')
     csv_string = "data:text/csv;charset=utf-8," + urllib.parse.quote(csv_string)
@@ -704,7 +704,7 @@ def update_fig5(drop_value_d, slide_value_d, base):
     data_table_tp0 = data_tasa_resp_0[{'muestra', drop_value_d}].copy()
     data_table_tp0 = data_table_tp0.rename(columns={drop_value_d: 'Promedio'})
     data_table_tp0['Promedio'] = data_table_tp0.Promedio.round(4)
-    data_table_tp0['muestra'] = 'ES 2022'
+    data_table_tp0['muestra'] = 'ES 202X'
     data_table_tp0['Mínimo'] = 0
     data_table_tp0['Máximo'] = 0
     data_table_tp0['SD'] = 0
